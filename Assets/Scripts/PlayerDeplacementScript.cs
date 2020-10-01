@@ -18,26 +18,24 @@ public class PlayerDeplacementScript : MonoBehaviour
 
     [SerializeField]
     private LayerMask WallMask;
-
-    private bool pickupKeyPress;
     Vector3 direction = Vector3.zero;
 
-    public bool PickupKeyPress { get => pickupKeyPress; private set => pickupKeyPress = value; }
+    public bool PickupKeyPress { get; private set; }
 
     CollectibleScript collectible;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3(Input.GetAxisRaw(HorizontalName),0, Input.GetAxisRaw(VerticalName)).normalized;
+        direction = new Vector3(Input.GetAxisRaw(HorizontalName),0, Input.GetAxisRaw(VerticalName)).normalized;
 
         gameObject.transform.position += direction * Time.deltaTime * Speed;
 
         gameObject.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 
-        pickupKeyPress = Input.GetAxis(FirePlayer) != 0;
+        PickupKeyPress = Input.GetAxis(FirePlayer) != 0;
 
-        if(! pickupKeyPress)
+        if(!PickupKeyPress)
         {
             ReleaseCollectible();
         }
@@ -52,21 +50,21 @@ public class PlayerDeplacementScript : MonoBehaviour
     }
 
     public void ReleaseCollectible()
-    {
+    { 
         Debug.Log(gameObject + "  " + collectible);
         if(collectible == null)
         {
             return;
         }
-
         collectible.transform.parent = null;
-
         collectible = null;
     }
 
     public void Pickup(CollectibleScript collectible)
     {
+        this.collectible = collectible;
         collectible.transform.parent = transform;
+        PickupKeyPress = true;
     }
 
 
