@@ -31,7 +31,10 @@ public class PlayerDeplacementScript : MonoBehaviour
 
         gameObject.transform.position += direction * Time.deltaTime * Speed;
 
-        gameObject.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        if(direction != Vector3.zero)
+        {
+            gameObject.transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
 
         PickupKeyPress = Input.GetAxis(FirePlayer) != 0;
 
@@ -51,7 +54,6 @@ public class PlayerDeplacementScript : MonoBehaviour
 
     public void ReleaseCollectible()
     { 
-        Debug.Log(gameObject + "  " + collectible);
         if(collectible == null)
         {
             return;

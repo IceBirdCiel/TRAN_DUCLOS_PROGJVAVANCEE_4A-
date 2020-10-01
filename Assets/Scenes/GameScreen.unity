@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 1.8
+    agentRadius: 2
     agentHeight: 1
     agentSlope: 2.1
     agentClimb: 0.4
@@ -114,13 +114,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.59999996
+    cellSize: 0.6666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a165720bf0b21f84c8b7e5a09a2f2052, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 056f1d68ff34c0e419fb497cdd76de75, type: 2}
 --- !u!1001 &5870316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 60120433}
-  timeleft: 30
+  timeleft: 10
 --- !u!1 &118166539
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 543265043}
+  gameData: {fileID: 11400000, guid: 78c16ebe556a5f245843426116eed8d3, type: 2}
   GameOverScreen: GameOverScreen
   VictoryScreen: GameOverScreen
   timer: {fileID: 60120435}
@@ -6714,7 +6715,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1001 &2106039121
 PrefabInstance:

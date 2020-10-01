@@ -9,6 +9,9 @@ public class GameManagerScript : MonoBehaviour
     private ScoreTextScript score;
 
     [SerializeField]
+    private GameData gameData;
+
+    [SerializeField]
     private string GameOverScreen;
 
     [SerializeField]
@@ -46,13 +49,15 @@ public class GameManagerScript : MonoBehaviour
 
     void GameOver()
     {
+        gameData.IsWinning = false;
         Debug.Log("Game Over");
         SceneManager.LoadScene(GameOverScreen, LoadSceneMode.Single);
     }
 
     void Victory()
     {
+        gameData.IsWinning = true;
         Debug.Log("Victory !");
-        //SceneManager.LoadScene(VictoryScreen);
+        SceneManager.LoadScene(VictoryScreen);
     }
 }
