@@ -20,6 +20,12 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private int palier;
 
+    private bool IsWinning;
+    void Start()
+    {
+        IsWinning = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +39,7 @@ public class GameManagerScript : MonoBehaviour
             else if (score.score.score >= palier)
             {
                 Victory();
+                IsWinning = true;
             }
         }
     }

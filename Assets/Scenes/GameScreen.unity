@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 60120433}
-  timeleft: 60
+  timeleft: 5
 --- !u!1 &118166539
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 543265043}
   GameOverScreen: GameOverScreen
-  VictoryScreen: 
+  VictoryScreen: GameOverScreen
   timer: {fileID: 60120435}
   palier: 50
 --- !u!4 &150580918
