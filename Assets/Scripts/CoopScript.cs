@@ -27,16 +27,6 @@ public class CoopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //reached = false;
-        //if (!reached)
-        //{
-            Agent.destination = CurrentTarget.transform.position;
-        //}
+        Agent.destination = CurrentTarget.transform.position;
     }
-
-    /*public void SetNextStep(Target nextTarget)
-    {
-        this.OldTarget = this.CurrentTarget;
-        this.CurrentTarget = nextTarget;
-    }*/
 }

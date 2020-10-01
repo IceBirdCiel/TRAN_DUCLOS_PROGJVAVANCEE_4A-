@@ -9,8 +9,6 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(transform.name);
-        Debug.Log(other.transform.name);
         if (other.gameObject.TryGetComponent(out CoopScript coop))
         {
             coop.OldTarget = coop.CurrentTarget;
