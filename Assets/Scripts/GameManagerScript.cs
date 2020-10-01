@@ -23,7 +23,6 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(score.score.score);
         if (timer.timeleft < 0)
         {
             timer.timeleft = 0;
