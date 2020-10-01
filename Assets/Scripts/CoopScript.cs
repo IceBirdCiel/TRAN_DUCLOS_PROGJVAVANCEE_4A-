@@ -9,9 +9,11 @@ public class CoopScript : MonoBehaviour
     private Target StartPoint;
 
     public Target CurrentTarget;
-    public Target OldTarget;
+    private Target OldTarget;
 
     private NavMeshAgent Agent;
+
+    private bool reached;
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +27,16 @@ public class CoopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //reached = false;
+        //if (!reached)
+        //{
+            Agent.destination = CurrentTarget.transform.position;
+        //}
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void SetNextStep(Target nextTarget)
     {
-        if (other.gameObject.TryGetComponent(out Target target))
-        {
-            this.OldTarget = this.CurrentTarget;
-            this.CurrentTarget = target.nextTarget;
-        }
+        this.OldTarget = this.CurrentTarget;
+        this.CurrentTarget = nextTarget;
     }
 }
