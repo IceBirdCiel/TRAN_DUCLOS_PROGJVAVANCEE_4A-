@@ -16,6 +16,14 @@ public class CoopTriggerScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out PlayerDeplacementScript player))
+        {
+            coop.pursuit = true;
+            coop.Agent.destination = other.gameObject.transform.position;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.TryGetComponent(out PlayerDeplacementScript player))
