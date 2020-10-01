@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 543265043}
-  GameOverScreen: 
+  GameOverScreen: GameOverScreen
   VictoryScreen: 
   timer: {fileID: 60120435}
   palier: 50
