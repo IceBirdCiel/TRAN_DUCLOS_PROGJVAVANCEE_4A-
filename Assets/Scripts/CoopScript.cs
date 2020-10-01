@@ -11,9 +11,8 @@ public class CoopScript : MonoBehaviour
     public Target CurrentTarget;
     public Target OldTarget;
 
-    private NavMeshAgent Agent;
-
-    private bool reached;
+    public NavMeshAgent Agent;
+    public bool pursuit;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,10 @@ public class CoopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Agent.destination = CurrentTarget.transform.position;
+        if (!pursuit)
+        {
+            Agent.destination = CurrentTarget.transform.position;
+        }
     }
+
 }
