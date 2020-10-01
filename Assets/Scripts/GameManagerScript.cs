@@ -40,7 +40,7 @@ public class GameManagerScript : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over");
-        //SceneManager.LoadScene(GameOverScreen);
+        SceneManager.LoadScene(GameOverScreen, LoadSceneMode.Single);
     }
 
     void Victory()
