@@ -18,6 +18,13 @@ public class PlayerDeplacementScript : MonoBehaviour
 
     [SerializeField]
     private LayerMask WallMask;
+
+    [SerializeField]
+    public ScoreTextScript score;
+
+    [SerializeField]
+    private GameObject spawn;
+
     Vector3 direction = Vector3.zero;
 
     public bool PickupKeyPress { get; private set; }
@@ -46,9 +53,10 @@ public class PlayerDeplacementScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if((WallMask.value & (1 << collision.gameObject.layer)) > 0)
+        if (collision.gameObject.TryGetComponent(out CoopScript coop))
         {
-            Debug.Log("Collision");
+            this.transform.position = spawn.transform.position;
+            score.score.AugmenterScore(-75);
         }
     }
 

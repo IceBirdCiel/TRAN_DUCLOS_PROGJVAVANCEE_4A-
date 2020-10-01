@@ -8,9 +8,6 @@ public class CoopScript : MonoBehaviour
     [SerializeField]
     private Target StartPoint;
 
-    [SerializeField]
-    public ScoreTextScript score;
-
     public Target CurrentTarget;
     public Target OldTarget;
 
@@ -32,15 +29,6 @@ public class CoopScript : MonoBehaviour
         if (!pursuit)
         {
             Agent.destination = CurrentTarget.transform.position;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out PlayerDeplacementScript player)){
-            Destroy(player);
-            score.score.AugmenterScore(-75);
-            //Instantiate();
         }
     }
 }
