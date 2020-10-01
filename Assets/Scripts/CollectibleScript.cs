@@ -5,46 +5,39 @@ using UnityEngine;
 public class CollectibleScript : MonoBehaviour
 {
     [SerializeField]
-    private string FirePlayer;
-    
-    [SerializeField]
-    private string FirePlayer2;
+    public int value;
 
-    private bool pickupKeyPress;
-    private bool pickupKeyPress2;
-
-    
-    // Update is called once per frame
-    void Update()
+    private bool picked;
+    private void Update()
     {
-        pickupKeyPress = Input.GetAxis(FirePlayer) != 0;
-        pickupKeyPress2 = Input.GetAxis(FirePlayer2) != 0;
+        picked = false;
 
-        if (!pickupKeyPress&!pickupKeyPress2)
+        if (picked)
         {
-            transform.parent = null;
+            //this.GetComponent(boxcollider);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision);
         if(collision.gameObject.TryGetComponent(out PlayerDeplacementScript player))
         {
-            if(pickupKeyPress)
-                this.transform.parent = collision.gameObject.transform;
-            else if (pickupKeyPress2)
-                this.transform.parent = collision.gameObject.transform;
+            if(player.PickupKeyPress)
+            {
+                player.Pickup(this);
+            }
         }
     }
 
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log(collision);
         if (collision.gameObject.TryGetComponent(out PlayerDeplacementScript player))
         {
-            if (pickupKeyPress)
-                this.transform.parent = collision.gameObject.transform;
-            else if (pickupKeyPress2)
-                    this.transform.parent = collision.gameObject.transform;
+            if (player.PickupKeyPress)
+            {
+                player.Pickup(this);
+            }
         }
     }
 }

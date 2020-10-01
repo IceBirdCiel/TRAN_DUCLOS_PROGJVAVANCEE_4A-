@@ -4,30 +4,16 @@ using UnityEngine;
 
 public class DropAreaScript : MonoBehaviour
 {
-    private bool drop;
+    [SerializeField]
+    private ScoreTextScript score;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        drop = false;
-
-        if (drop)
-        {
-            //Delete(gameObject);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void onCollisionEnter(Collision collision)
-    {
+        Debug.Log(collision.gameObject);
         if(collision.gameObject.TryGetComponent(out CollectibleScript collectible))
         {
-
+            Destroy(collectible.gameObject);
+            score.score.AugmenterScore(collectible.value);
         }
     }
 }
