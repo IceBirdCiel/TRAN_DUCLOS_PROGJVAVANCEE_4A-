@@ -13,7 +13,8 @@ public class Target : MonoBehaviour
         Debug.Log(other.transform.name);
         if (other.gameObject.TryGetComponent(out CoopScript coop))
         {
-            coop.SetNextStep(nextTarget);
+            coop.OldTarget = coop.CurrentTarget;
+            coop.CurrentTarget = nextTarget;
         }
     }
 }

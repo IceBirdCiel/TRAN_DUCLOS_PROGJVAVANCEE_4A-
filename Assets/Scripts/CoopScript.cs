@@ -9,7 +9,7 @@ public class CoopScript : MonoBehaviour
     private Target StartPoint;
 
     public Target CurrentTarget;
-    private Target OldTarget;
+    public Target OldTarget;
 
     private NavMeshAgent Agent;
 
@@ -34,9 +34,9 @@ public class CoopScript : MonoBehaviour
         //}
     }
 
-    public void SetNextStep(Target nextTarget)
+    /*public void SetNextStep(Target nextTarget)
     {
         this.OldTarget = this.CurrentTarget;
         this.CurrentTarget = nextTarget;
-    }
+    }*/
 }

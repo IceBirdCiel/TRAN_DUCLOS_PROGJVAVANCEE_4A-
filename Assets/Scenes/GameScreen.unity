@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 60120433}
-  timeleft: 60
+  timeleft: 10
 --- !u!1 &118166539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,6 +5561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPoint: {fileID: 0}
   CurrentTarget: {fileID: 0}
+  OldTarget: {fileID: 0}
 --- !u!1 &1779697631
 GameObject:
   m_ObjectHideFlags: 0
@@ -6540,6 +6541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPoint: {fileID: 608551391}
   CurrentTarget: {fileID: 0}
+  OldTarget: {fileID: 0}
 --- !u!1001 &2106039121
 PrefabInstance:
   m_ObjectHideFlags: 0
