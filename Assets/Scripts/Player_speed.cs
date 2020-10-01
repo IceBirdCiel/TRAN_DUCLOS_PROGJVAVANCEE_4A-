@@ -18,6 +18,11 @@ public class Player_speed : MonoBehaviour
         var h = Input.GetAxis("Horizontal");
         anim.SetFloat("speedv", v);
         anim.SetFloat("speedh", h);
-        
+
+
+        var v2 = Input.GetAxis("Vertical2");
+        var h2 = Input.GetAxis("Horizontal2");
+        anim.SetFloat("speedv2", v2);
+        anim.SetFloat("speedh2", h2);
     }
 }
