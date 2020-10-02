@@ -17,7 +17,7 @@ public class Coop_speed : MonoBehaviour
     {
         var v = Input.GetAxis("Vertical");
         var h = Input.GetAxis("Horizontal");
-        anim.SetFloat("speedv", v);
-        anim.SetFloat("speedh", h);
+        anim.SetFloat("speedvPolice", v);
+        anim.SetFloat("speedhPolice", h);
     }
 }
