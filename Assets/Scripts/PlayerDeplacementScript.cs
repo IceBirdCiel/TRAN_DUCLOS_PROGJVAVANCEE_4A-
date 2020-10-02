@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerDeplacementScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource audio;
+
     [SerializeField]
     private string FirePlayer;
 
@@ -58,6 +62,7 @@ public class PlayerDeplacementScript : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out CoopScript coop))
         {
+            audio.Play();
             this.transform.position = spawn.transform.position;
             score.score.AugmenterScore(-75);
             isCaptured = true;

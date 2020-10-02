@@ -16,7 +16,7 @@ public class TimerScript : MonoBehaviour
         if (timeleft > 0)
         {
             timeleft -= Time.deltaTime;
-            textMesh.text = "Time :" + timeleft.ToString();
+            textMesh.text = "Time :" + timeleft.ToString("0");
         }
     }
 }

@@ -25,7 +25,6 @@ public class LightScript : MonoBehaviour
         time += Time.deltaTime*4.0f;
         x = (int)time;
 
-        Debug.Log(x);
         if((x/2)%2 == 0)
         {
             color = Color.red;
