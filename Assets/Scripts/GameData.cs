@@ -11,4 +11,5 @@ public class GameData : ScriptableObject
 
     public bool IsWinning { get => isWinning; set => isWinning = value; }
     public int Score { get => score; set => score = value; }
+
 }
