@@ -11,6 +11,12 @@ public class PlayButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("GameScreen");
     }
+
+    public void MenuScreen()
+    {
+        SceneManager.LoadScene("MainMenuScreen");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
