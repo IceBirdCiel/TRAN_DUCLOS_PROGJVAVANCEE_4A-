@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Coop_speed : MonoBehaviour
 {
+
+    [SerializeField]
+    private CoopScript script;
+
     private Animator anim;
 
     // Start is called before the first frame update
@@ -15,8 +19,8 @@ public class Coop_speed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var v = Input.GetAxis("Vertical");
-        var h = Input.GetAxis("Horizontal");
+        var v = script.Agent.velocity.x;
+        var h = script.Agent.velocity.z;
         anim.SetFloat("speedvPolice", v);
         anim.SetFloat("speedhPolice", h);
     }
