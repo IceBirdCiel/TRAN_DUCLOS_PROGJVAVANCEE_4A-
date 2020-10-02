@@ -7136,7 +7136,7 @@ MonoBehaviour:
   StartPoint: {fileID: 608551391}
   CurrentTarget: {fileID: 0}
   OldTarget: {fileID: 0}
-  Agent: {fileID: 0}
+  Agent: {fileID: 2066301362}
   pursuit: 0
 --- !u!54 &2066301364
 Rigidbody:
@@ -7154,6 +7154,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2066301365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066301360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b313df28fc58f2b4883d8854a6dae7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2066301366
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066301360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61282a5c4fa95634c8d6255007ad1d20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2106039121
 PrefabInstance:
   m_ObjectHideFlags: 0

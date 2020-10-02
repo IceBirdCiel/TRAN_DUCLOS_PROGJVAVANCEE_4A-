@@ -27,6 +27,7 @@ public class PlayerDeplacementScript : MonoBehaviour
 
     Vector3 direction = Vector3.zero;
 
+    private bool isCaptured;
     public bool PickupKeyPress { get; private set; }
 
     CollectibleScript collectible;
@@ -34,6 +35,8 @@ public class PlayerDeplacementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isCaptured = false;
+
         direction = new Vector3(Input.GetAxisRaw(HorizontalName),0, Input.GetAxisRaw(VerticalName)).normalized;
 
         gameObject.transform.position += direction * Time.deltaTime * Speed;
@@ -57,6 +60,7 @@ public class PlayerDeplacementScript : MonoBehaviour
         {
             this.transform.position = spawn.transform.position;
             score.score.AugmenterScore(-75);
+            isCaptured = true;
         }
     }
 
